@@ -10,6 +10,7 @@
 \usepackage{fontspec}
 \usepackage[mark, raisemark=0.02\paperheight, marknotags]{gitinfo2}
 \usepackage{setspace}
+\usepackage{floatrow}
 
 \doublespacing
 
@@ -87,14 +88,25 @@
 %\setcounter{subsection}{2}
 
 \subsection*{¿Por qué los camiones que transportan combustible arrastran una cadena?}%
+Para neutralizar la carga que obtienen con el roce del viento.
 
 \subsection*{Una persona está manejando sobre un terreno húmedo cuando de repente
 empieza una tormenta eléctrica
 ¿Es seguro permanecer dentro del auto? ¿Por qué?}%
+Sí.
+Porque las llantas sirven como aislante.
 
 \subsection*{¿Cómo serán las líneas de campo y equipotenciales generadas por una
-varilla cargada uniformemente? ¿Y para una carga triangula?
+varilla cargada uniformemente? ¿Y para una carga triangular?
 Graficalas}%
+
+\begin{figure}[H]
+	\centering
+	\begin{floatrow}
+		\ffigbox{\includesvg[width=\linewidth]{dibujo}}{}
+		\ffigbox{\includesvg[width=0.8\linewidth]{dibujo2}}{}
+	\end{floatrow}
+\end{figure}
 
 
 % }}}
