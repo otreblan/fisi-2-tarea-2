@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside]{article}
+\documentclass[10pt, twoside]{article}
 % Opciones {{{
 \usepackage[pdfa, pdfusetitle, unicode=true]{hyperref}
 \usepackage[spanish]{babel}
@@ -24,6 +24,8 @@
 
 % Esto sirve para poner ecuaciones
 \usepackage{mathtools}
+\usepackage{cancel}
+\allowdisplaybreaks
 
 % Esto sirve para poner imágenes{{{
 \usepackage{graphicx}
@@ -117,9 +119,58 @@ Graficalas}%
 se encuentra cargado positivamente con una densidad lineal $\lambda = 20\mu \frac{C}{m}$.
 Determina:}%
 \begin{enumerate}[label=\textbf{\alph*)}]
-	\item El campo eleéctrico en el punto $O$.
+	\item El campo eléctrico en el punto $O$.
+		\begin{align*}
+			dE &= k \frac{dQ}{r^2} \\
+			%
+			dE &= k \frac{\lambda \cancel{r}d\theta}{r^{\cancel{2}} } \\
+			%
+			d\vec{E} &= k \frac{\lambda}{r} d\theta*(\cos{\theta}(-\hat{\imath})+\sen{\theta}(-\hat{\jmath}))\\
+			%
+			\int^{\vec{E}}_{0}d\vec{E} &= k \frac{\lambda}{r}
+			\int^{\frac{150°\pi}{180°}}_{\frac{30°\pi}{180°}}d\theta*(\cos{\theta}(-\hat{\imath})+\sen{\theta}(-\hat{\jmath}))\\
+			%
+			\vec{E} &= k \frac{\lambda}{r} *\Big{|}^{\frac{150°\pi}{180°}}_{\frac{30°\pi}{180°}}
+			\Big{[}\sen{\theta}(-\hat{\imath})-\cos{\theta}(-\hat{\jmath})\Big{]}\\
+			%
+			\vec{E} &= 9*10^9 \frac{N\cancel{m^2}}{C^{\cancel{2}} }*
+			20*10^{-6} \frac{2\cancel{C}}{\cancel{m^2}}
+			\Big{(}
+			\cancel{(\sen{\frac{150°\pi}{180°}}-\sen{\frac{30°\pi}{180°}})(-\hat{\imath})}-
+			(\cos{\frac{150°\pi}{180°}}-\cos{\frac{30°\pi}{180°}})(-\hat{\jmath})
+			\Big{)}\\
+			%
+			\Aboxed
+			{
+				\vec{E} &= -\Big{(}62.35*10^4 \frac{N}{C}\Big{)}\hat{\jmath}
+			}
+		\end{align*}
 	\item La fuerza eléctrica sobre una carga puntual $q(-2\mu C)$ que se sitúa en el punto $O$.
+		\begin{align*}
+			\vec{F} &= \vec{E}*q\\
+			\vec{F} &= -\Big{(}62.35*10^4 \frac{N}{\cancel{C}}\Big{)}\hat{\jmath}*-2*10^{-6}\cancel{C}\\
+			\Aboxed
+			{
+				\vec{F} &= (124.70*10^{-2}N)\hat{\jmath}
+			}
+		\end{align*}
 	\item El potencial eléctrico en el punto $O$.
+		\begin{align*}
+			dV &= k \frac{dQ}{r} \\
+			dV &= k \frac{\lambda*(d\theta*\cancel{r})}{\cancel{r}}\\
+			%
+			\int^V_0dV &= k \lambda \int^{\frac{150°\pi}{180°}}_{\frac{30°\pi}{180°}}d\theta\\
+			%
+			V &= 9*10^9 \frac{Nm^{\cancel{2}} }{C^{\cancel{2}}}*20*10^{-6} \cancel{\frac{C}{m}}*\Big{(}
+			\frac{5\pi}{6} - \frac{\pi}{6}
+			\Big{)}\\
+			%
+			V &= 18*10^4* \frac{4\pi}{6}* \frac{Nm}{C} \\
+			\Aboxed
+			{
+				V &= 12\pi*10^4* \frac{Nm}{C}
+			}
+		\end{align*}
 \end{enumerate}
 
 \subsection*{Una esfera pequeña de metal tiene una carga neta de $q_1 =-3.5\mu C$
