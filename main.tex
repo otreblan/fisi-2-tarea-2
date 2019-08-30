@@ -115,6 +115,7 @@ Graficalas}%
 % Problemas {{{
 \section{Problemas}%
 \label{sec:Problemas}
+% Problema 3{{{
 \subsection*{El siguente arco de circunferencia, de díamentro $d = 1m$ y centro $O$,
 se encuentra cargado positivamente con una densidad lineal $\lambda = 20\mu \frac{C}{m}$.
 Determina:}%
@@ -161,7 +162,7 @@ Determina:}%
 			%
 			\int^V_0dV &= k \lambda \int^{\frac{150°\pi}{180°}}_{\frac{30°\pi}{180°}}d\theta\\
 			%
-			V &= 9*10^9 \frac{Nm^{\cancel{2}} }{C^{\cancel{2}}}*20*10^{-6} \cancel{\frac{C}{m}}*\Big{(}
+			V &= 9*10^9 \frac{Nm^{\cancel{2}} }{C^{\cancel{2}} }*20*10^{-6} \cancel{\frac{C}{m}}*\Big{(}
 			\frac{5\pi}{6} - \frac{\pi}{6}
 			\Big{)}\\
 			%
@@ -172,7 +173,8 @@ Determina:}%
 			}
 		\end{align*}
 \end{enumerate}
-
+% }}}
+% Problema 4{{{
 \subsection*{Una esfera pequeña de metal tiene una carga neta de $q_1 =-3.5\mu C$
 y se mantiene en posición estacionaria por medio de soportes aislados.
 Una segunda esfera metálica también pequeña con carga neta de $q_2 =-0.2mC$ y masa de $150g$ es
@@ -180,10 +182,19 @@ lanzada horizontalmente hacia $q_1$ desde una distancia de $80cm$ con una rapide
 $22\frac{m}{s}$. Determina lo siguiente:}%
 \begin{enumerate}[label=\textbf{\alph*)}]
 	\item Las fuerzas que actúan sobre $q_2$.
+		\begin{align*}
+			\vec{P} &= -1.5N\hat{\jmath} &&\text{Peso}\\
+			\vec{F} &= k \frac{q_1q_2}{r(t)^2}*\hat{d}(r)_{q_1q_2}
+		\end{align*}
 	\setcounter{enumi}{2}
 	\item La distancia mínima a la que llegan a estar las esferas.
+		\begin{align*}
+			\vec{a}(t) &= \frac{\vec{F}(t)}{m} + \frac{\vec{P}}{m}\\
+			\vec{a}(t)
+		\end{align*}
 \end{enumerate}
-
+% }}}
+% Problema 7 {{{
 \subsection*{La esfera hueca mostrada en la figura es de material no conductor,
 radio externo $2a$, y posee densidad volumétrica de carga constante.
 La cavidad también es esférica, de radio $a$, con centro a una distancia
@@ -192,7 +203,7 @@ $a$ del centro. Dtermina:}%
 	\item El campo eléctrico en el punto $(0;4a)$
 	\item El potencial eléctrico en el punto $(4a;0)$
 \end{enumerate}
-
+% }}}
 % }}}
 \vfill
 Código fuente: \url{https://github.com/otreblan/fisi-2-tarea-2}
