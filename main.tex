@@ -25,6 +25,8 @@
 % Esto sirve para poner ecuaciones
 \usepackage{mathtools}
 \usepackage{cancel}
+\usepackage{tikz}
+\usetikzlibrary{spy, backgrounds}
 \allowdisplaybreaks
 
 % Esto sirve para poner imágenes{{{
@@ -188,10 +190,67 @@ $22\frac{m}{s}$. Determina lo siguiente:}%
 		\end{align*}
 	\setcounter{enumi}{2}
 	\item La distancia mínima a la que llegan a estar las esferas.
-		%\begin{align*}
-			%\vec{a}(t) &= \frac{\vec{F}(t)}{m} + \frac{\vec{P}}{m}\\
-			%\vec{a}(t)
-		%\end{align*}
+		\subitem Código fuente del simulador que programé:
+			\url{https://github.com/otreblan/fisi-2-tarea-2/tree/master/simulador}
+
+			% Gráfico
+			\shorthandoff{"}
+			% Líneas {{{
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					[
+					spy using outlines={rectangle,
+						magnification=5,
+						width=5cm,
+						height=2.5cm,
+						connect spies
+					}
+					]
+					\begin{axis}
+						[
+						width=0.9\linewidth,
+						height=6cm,
+						axis y line=left,
+						axis x line=bottom,
+						axis line style = ultra thick,
+						ymin=-15,
+						xlabel={Tiempo desde el inicio $(s)$},
+						ylabel={Distancia entre $q_1$ y $q_2$ $(m)$},
+						ymajorgrids=true]
+						\addplot[
+							restrict x to domain=0:0.5,
+							color=red,
+							smooth,
+							%ultra thick
+							line width=0.1pt
+							]
+							table[
+							col sep=comma,
+							y expr=\thisrowno{3}*1.0,
+							x index=0
+							]{simulacion.csv};
+						\addplot[
+							restrict x to domain=0.040:0.045,
+							color=black,
+							smooth,
+							nodes near coords={\fontsize{5pt}{0pt}\selectfont
+							$\pgfmathprintnumber{\pgfkeysvalueof{/data point/y}}m$},
+							nodes near coords align={below}
+							]
+							table[
+							col sep=comma,
+							y expr=\thisrowno{3}*1.0,
+							x index=0
+							]{simulacion.csv};
+						\coordinate (ripple) at (0.04,-0.5);
+						\coordinate (lupa) at (0.35,-4);
+						\end{axis}
+						\spy[black] on (ripple) in node[fill=white] at (lupa);
+				\end{tikzpicture}
+			\end{figure}
+			%}}}
+			\shorthandon{"}
 \end{enumerate}
 % }}}
 % Problema 7 {{{
