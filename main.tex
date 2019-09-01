@@ -261,17 +261,18 @@ radio externo $2a$, y posee densidad volumétrica de carga constante.
 La cavidad también es esférica, de radio $a$, con centro a una distancia
 $a$ del centro. Determina:}%
 \begin{align*}
-	\rho_e & && \text{Densidad volumétrica}
+	\rho_e & && \text{Densidad volumétrica}\\
+	V_{on} & && \text{Volumen de la esfera}
 \end{align*}
 \begin{enumerate}[label=\textbf{\alph*)}]
 	\item El campo eléctrico en el punto $(0;4a)$
 		\begin{align*}
 			\sum\vec{E} &= \vec{E}_1 + \vec{E}_2\\
 			\\
-			\vec{E}_1 &= k \frac{\rho_eV_1}{d_1^2}\hat{u}\\
-			\vec{E}_2 &= k \frac{-\rho_eV_2}{d_2^2}\hat{u}\\
+			\vec{E}_1 &= k \frac{\rho_eV_{o1}}{d_1^2}\hat{u}\\
+			\vec{E}_2 &= k \frac{-\rho_eV_{o2}}{d_2^2}\hat{u}\\
 			\\
-			\sum\vec{E} &= k\rho_e\Big{(}\frac{V_1}{d_1^2}-\frac{V_2}{d_2^2}\Big{)}\hat{u}\\
+			\sum\vec{E} &= k\rho_e\Big{(}\frac{V_{o1}}{d_1^2}-\frac{V_{o2}}{d_2^2}\Big{)}\hat{u}\\
 			\sum\vec{E} &= k\rho_e\Big{(}\frac{4\pi 8a^3}{3*16a^2}-\frac{4\pi a^3}{3*9a^2}\Big{)}\hat{u}\\
 			\sum\vec{E} &= k\rho_e\Big{(}\frac{2\pi a}{3}-\frac{4\pi a}{27}\Big{)}\hat{u}\\
 			\sum\vec{E} &= k\rho_e\Big{(}\frac{14\pi a}{27}\Big{)}\hat{u}\\
@@ -285,10 +286,17 @@ $a$ del centro. Determina:}%
 		\begin{align*}
 			\sum V &= V_1+V_2\\
 			\\
-			V_1 &= k \frac{\rho_eV_1}{d_1}\\
-			V_2 &= k \frac{-\rho_eV_2}{d_2}\\
+			V_1 &= k \frac{\rho_eV_{o1}}{d_1}\\
+			V_2 &= k \frac{-\rho_eV_{o2}}{d_2}\\
 			\\
-			\sum V &= k\rho_e \Big{(} \frac{V_1}{d_1}- \frac{V_2}{d_2} \Big{)}
+			\sum V &= k\rho_e \Big{(} \frac{V_{o1}}{d_1}- \frac{V_{o2}}{d_2} \Big{)}\\
+			\sum V &= k\rho_e \Big{(} \frac{\cancel{4}\pi 8a^3}{3*\cancel{4}a}- \frac{4\pi a^3}{ \sqrt{17}a} \Big{)}\\
+			\sum V &= k\rho_e \Big{(} \frac{\pi 8a^2}{3}- \frac{4\pi a^2}{ \sqrt{17}} \Big{)}\\
+			\sum V &= k\rho_e \Big{(} \frac{4\pi a^2(2\sqrt{17}-3)}{3\sqrt{17}} \Big{)}\\
+			\Aboxed
+			{
+				\sum V &= \rho_e \Big{(} \frac{12\pi a^2(2\sqrt{17}-3)}{\sqrt{17}} \Big{)}10^9
+			}
 		\end{align*}
 \end{enumerate}
 % }}}
